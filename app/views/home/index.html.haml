@@ -1,0 +1,11 @@
+-if !is_admin?
+  %h5
+    Enrolled Courses:
+    = @enrolled_courses.count
+  - @enrolled_courses.each do |course|
+    = render 'courses/course', course: course
+
+%h5 Recent Courses:
+%div#coursesList
+  - @recent_courses.each do |course|
+    = render 'courses/course', course: course

@@ -1,0 +1,10 @@
+- content_for :title do
+  = @lesson.title
+
+= link_to 'Courses', courses_path
+\/
+= link_to @lesson.course, course_path(@lesson.course)
+\/
+=link_to @lesson.title, course_lesson_path(@lesson.course.id, @lesson)
+
+= render 'lessons/lesson', lesson: @lesson

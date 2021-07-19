@@ -1,0 +1,12 @@
+.card
+  .card-header
+    = lesson.title
+  -if is_admin? || !lesson.course.bought(current_user)
+    .card-body
+      = lesson.content
+      = lesson.course
+  - if is_admin?
+    .card-footer
+      = link_to 'Show', course_lesson_path(lesson.course, lesson)
+      = link_to 'Edit', edit_course_lesson_path(lesson.course, lesson)
+      = link_to 'Destroy', course_lesson_path(lesson.course, lesson), method: :delete, data: { confirm: 'Are you sure?' }

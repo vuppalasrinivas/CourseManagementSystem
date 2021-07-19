@@ -1,0 +1,24 @@
+.card.mb-5
+  .card-header
+    = link_to course.name, course
+  .card-body
+    = course.description
+  .card-footer
+    Author:
+    = course.user
+  - unless is_admin?
+    .card-footer
+      Course Price:
+      = enrollment_button(course)
+  - if course.category&.name
+    .card-footer
+      Category:
+      = link_to course.category.name, courses_path(category: course.category_id)
+  .card-footer
+    course lessons count:
+    = course.lessons.count
+  - if policy(course).edit?
+    .card-footer
+      = link_to 'Edit', edit_course_path(course), class: 'btn btn-sm btn-warning' if policy(course).edit?
+      = link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' if policy(course).destroy?
+

@@ -1,0 +1,8 @@
+.card
+  .card-header
+    New enrollment
+  .card-body
+    = form_tag course_enrollments_path(@course) do
+      = submit_tag 'Buy Now!'
+  .card-footer
+= link_to 'Back', enrollments_path

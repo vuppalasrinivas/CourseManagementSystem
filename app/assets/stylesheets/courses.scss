@@ -1,0 +1,25 @@
+// Place all the styles related to the Courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.card.mb-5{
+  margin-bottom: 5px;
+}
+
+.course-categories {
+  a.active{
+    color: #B00100;
+  }
+}
+
+#coursesList {
+  .card-footer{
+    background-color: #ffffff !important;
+  }
+}
+
+.sidebar{
+  background: #F7F7F7;
+  padding-top: 20px;
+}
