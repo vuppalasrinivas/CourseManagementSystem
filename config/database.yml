@@ -27,6 +27,6 @@ test:
   <<: *default
   database: course_management_system_test
 
-#production:
-#  <<: *default
-#  database: db/production.sqlite3
+production:
+  <<: *default
+  database: course_management_system_p
